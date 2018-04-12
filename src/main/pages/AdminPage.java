@@ -14,9 +14,15 @@ public class AdminPage extends BasePage {
     }
 
     //*********Web Elements*********
-
+    String welcomeText = "/html/body/div[1]/div[2]/div/div/h1";
 
     //*********Page Methods*********
     
+    //Verify Login Condition
+    @Step("Verify verifyLoginAdmin: {0} step...")
+    public void verifyLoginAdmin (String expectedText) throws Exception {
+    	Thread.sleep(1000);
+        Assert.assertEquals(readText(By.xpath(welcomeText)), expectedText);
+    }
 
 }

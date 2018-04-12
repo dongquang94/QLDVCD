@@ -15,7 +15,7 @@ public class BaseTest {
     }
 
     @BeforeClass (description = "Class Level Setup!")
-    public void setup () {
+    public void setup () throws Exception {
         //Create a Chrome driver. All test classes use this.
         driver = new ChromeDriver();
 

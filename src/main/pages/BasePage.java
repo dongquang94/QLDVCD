@@ -1,16 +1,23 @@
 package main.pages;
 
 import io.qameta.allure.Attachment;
+
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 
 public class BasePage {
     public WebDriver driver;
     public WebDriverWait wait;
+    
+    
 
     //Constructor
     public BasePage (WebDriver driver, WebDriverWait wait){
@@ -20,7 +27,11 @@ public class BasePage {
 
     //Click Method
     public void click (By elementLocation) {
-        driver.findElement(elementLocation).click();
+    	WebElement element = driver.findElement(elementLocation);
+    	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    	Actions action = new Actions(driver);
+    	action.moveToElement(element).build().perform();
+    	element.click();
     }
 
     //Write Text

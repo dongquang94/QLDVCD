@@ -21,12 +21,13 @@ public class HomePage extends BasePage {
     }
 
     //*********Web Elements*********
-    String loginButton = "/html/body/header/nav/div/ul/li/a";
+    String loginButton = "/html/body/header/nav/div/ul/li/a"; 
+    //String loginButtoncss = "body > header > nav > div > ul > li > a";
     String usernameBox = "//*[@id=\"username\"]";
     String passwordBox = "//*[@id=\"password\"]";
     String loginButtonPanel = "//*[@id=\"btn-login\"]";
     String errorLoginMessage = "//*[@id=\"err-ms\"]";
-
+    
     //*********Page Methods*********
 
     //Go to Homepage
@@ -39,9 +40,10 @@ public class HomePage extends BasePage {
 
     //Go to LoginPanel
     @Step("Login Step with username: {0}, password: {1}, for method: {method} step...")
-    public void goToLoginPanel (String username, String password) throws Exception {  	
+    public void goToLoginPanel (String username, String password) throws Exception {
+    	Thread.sleep(500);    	
     	click(By.xpath(loginButton));
-    	Thread.sleep(500);
+    	Thread.sleep(500);    
         writeText(By.xpath(usernameBox),username);
         Thread.sleep(500);
         writeText(By.xpath(passwordBox), password);
@@ -52,7 +54,8 @@ public class HomePage extends BasePage {
 
     //Verify Login Condition
     @Step("Verify verifyLogin: {0} step...")
-    public void verifyLogin (String expectedText) {
+    public void verifyLogin (String expectedText) throws Exception {
+    	Thread.sleep(1000);
         Assert.assertEquals(readText(By.xpath(errorLoginMessage)), expectedText);
     }
 

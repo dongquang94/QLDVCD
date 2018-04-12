@@ -3,6 +3,8 @@ package main.scripts;
 import io.qameta.allure.*;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
+import main.pages.AdminPage;
 import main.pages.HomePage;
 import utils.GetProperties;
 import utils.ExtendReports.ExtendTestManager;
@@ -24,7 +26,6 @@ public class LoginTests extends BaseTest {
         HomePage homePage = new HomePage(driver,wait);
         homePage.goToHomePage();
         homePage.goToLoginPanel(prop.getPropValues("wrongUsername"),prop.getPropValues("wrongPassword"));
-        Thread.sleep(500);
         homePage.verifyLogin("");
     }
 
@@ -37,7 +38,6 @@ public class LoginTests extends BaseTest {
         HomePage homePage = new HomePage(driver,wait);
         homePage.goToHomePage();
         homePage.goToLoginPanel("","");
-        Thread.sleep(500);
         homePage.verifyLogin("");
     }
     
@@ -48,10 +48,10 @@ public class LoginTests extends BaseTest {
     public void validLoginTest () throws Exception {
     	ExtendTestManager.getTest().setDescription("Valid Login Scenario.");
         HomePage homePage = new HomePage(driver,wait);
+        AdminPage adminPage = new AdminPage(driver,wait);
         homePage.goToHomePage();
         homePage.goToLoginPanel(prop.getPropValues("username"),prop.getPropValues("password"));
-        Thread.sleep(500);
-        homePage.verifyLogin("");
+        adminPage.verifyLoginAdmin("Chào mừng bạn đến với trang chủ website Quản Lý Công đoàn");
     }
 
 }
