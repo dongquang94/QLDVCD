@@ -1,6 +1,7 @@
-package main.pages;
+package main.java.core.pages;
 
 import io.qameta.allure.Step;
+import main.java.core.utils.GetProperties;
 
 import java.io.IOException;
 
@@ -8,8 +9,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
-import utils.GetProperties;
 
 public class HomePage extends BasePage {
 

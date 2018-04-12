@@ -1,4 +1,4 @@
-package main.pages;
+package main.java.core.pages;
 
 import io.qameta.allure.Attachment;
 

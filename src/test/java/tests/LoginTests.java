@@ -1,14 +1,14 @@
-package main.scripts;
+package test.java.tests;
 
 import io.qameta.allure.*;
+import main.java.core.pages.AdminPage;
+import main.java.core.pages.HomePage;
+import main.java.core.utils.GetProperties;
+import main.java.core.utils.ExtendReports.ExtendTestManager;
+import main.java.core.utils.Listeners.TestListener;
+
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
-import main.pages.AdminPage;
-import main.pages.HomePage;
-import utils.GetProperties;
-import utils.ExtendReports.ExtendTestManager;
-import utils.Listeners.TestListener;
 
 @Listeners({ TestListener.class })
 @Epic("Regression Tests")

@@ -1,4 +1,4 @@
-package utils.ExtendReports;
+package main.java.core.utils.ExtendReports;
 
 import com.relevantcodes.extentreports.ExtentReports;
 

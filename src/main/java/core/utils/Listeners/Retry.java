@@ -1,16 +1,15 @@
-package utils.Listeners;
+package main.java.core.utils.Listeners;
 
 import com.relevantcodes.extentreports.LogStatus;
 
-import main.scripts.BaseTest;
+import main.java.core.utils.ExtendReports.ExtendTestManager;
+import test.java.tests.BaseTest;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
-
-import utils.ExtendReports.ExtendTestManager;
 
 public class Retry implements IRetryAnalyzer {
 
