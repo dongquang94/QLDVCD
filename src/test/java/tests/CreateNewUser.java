@@ -107,7 +107,10 @@ public class CreateNewUser {
 			issuePlaceBox.click();
 			WebElement searchBox = driver.findElement(By.xpath("/html/body/span/span/span[1]/input")); // dang dung duong dan tuyet doi khong on lam
 			searchBox.sendKeys("Hà Nội");
-			issuePlaceBox.click();
+//			issuePlaceBox.click();
+			Thread.sleep(500);
+			WebElement selectedValue = driver.findElement(By.xpath("//*[@class='select2-results__option select2-results__option--highlighted']"));
+			selectedValue.click();
 			Thread.sleep(500);
 			
 			//JoinDate 
